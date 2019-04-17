@@ -1,0 +1,161 @@
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        .fa-users {
+            position: fixed;
+        }
+        #app {
+            display: flex;
+            height: 100vh;
+        }
+        h2,span {
+            margin: 10px 0;
+            text-align: left;
+            font-weight: 500;
+            font-size: 22px;
+        }
+        .wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .top-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            top: 0;
+            background: #ffffff;
+            box-shadow: 0 0 10px -5px #000000;
+            z-index: 2;
+        }
+        .top-menu p {
+            padding: 0 20px;
+            color: black;
+            font-weight: 500;
+            font-size: 25px;
+        }
+        .fa-clipboard-list {
+            margin-top: 100px;
+        }
+        .users {
+            width: 90%;
+            border: none;
+            box-shadow: 0 0 10px 1px #00000080;
+            padding: 0;
+            margin-bottom: 200px;
+        }
+        .users tr {
+            transition: 0.2s;
+        }
+        .users tr:hover {
+            background: #909090;
+            cursor: pointer;
+            transform: scale(1.1);
+            color: white;
+            font-weight: 600;
+        }
+        .users tr:first-child{
+            background: #c2c2c2;
+            color: white;
+        }
+        .users tr:first-child:hover {
+            transform: scale(1)
+        }
+        .users td {
+            width: 100px;
+            height: 50px;
+            margin: 0;
+            text-align: center;
+            padding: 5px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #d2d2d2;
+        }
+        .team {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 0 10px -5px #000000;
+            padding: 20px 0;
+            background: white;
+        }
+        .team tr {
+            display: flex;
+            justify-content: space-around
+        }
+        .team td {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 150px;
+            height: 170px;
+            margin-right:2px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin: 5px 0 ;
+        }
+        .avatar img {
+            width: 100px;
+        }
+        #menu {
+            position: fixed;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            width: 300px;
+            height: 100%;
+            background: white;
+            box-shadow: 0 0 10px -5px #00000080;
+            padding: 50px 0 ;
+            order: 1;
+            z-index: 3;
+        }
+        #menu-button {
+            position: fixed;
+            top: 15px;
+            right: 0;
+            margin: 10px 20px;
+            z-index: 4;
+        }
+        #menu-button:hover {
+            cursor: pointer;
+        }
+        #menu-button i {
+            font-size: 30px;
+            color: #969696;
+        }
+        .input-wrap {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+        }
+        .input-wrap input{
+            padding: 10px 20px;
+            border: 1px solid #c2c2c2;
+            border-radius: 5px;
+        }
+        .input-wrap select {
+            height: 40px;
+            background: white;
+        }
+        .input-wrap button {
+            border-radius: 5px;
+            padding: 12px 0;
+            background: #54a5ff;
+            color: #ffffff;
+        }
