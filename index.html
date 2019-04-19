@@ -20,7 +20,7 @@
             <form action="">
                 <div class="input-wrap">
                     <label for="">Name</label>
-                    <input type="text" :value="name" id="name" required>
+                    <input type="text"  id="name" v-model="name">
                 </div>
                 <div class="input-wrap">
                     <label for="">Desk</label>
@@ -32,6 +32,7 @@
                 <div class="input-wrap">
                     <label for="">Country</label>
                     <select name="" id="country">
+                        <!-- <option :value="country"></option> -->
                         <option value="Switzerland">Switzerland</option>
                         <option value="Ukraine">Ukraine</option>
                     </select>

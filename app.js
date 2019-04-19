@@ -10,7 +10,7 @@
             menu : false,
             name : 'User Name',
             desk : 'Desk',
-            contry : 'Ukraine',
+            country : 'Select Country',
             target : 20,
             totalDay : 1,
             totalMounth : 0,
@@ -32,17 +32,16 @@
             },
             addUser : function(){
 
-                const userName = document.getElementById('name');
-                const userCountry = document.getElementById('country')
+                // const userName = document.getElementById('name');
+                // const userCountry = document.getElementById('country')
                 const userPlan = document.getElementById('plan')
                 const userDesk = document.getElementById('desk')
                 const userTeam = document.getElementById('team')
 
-
                 this.array.push({
-                    name : userName.value,
+                    name : this.name,
                     desk : userDesk.value,
-                    country : userCountry.value,
+                    country : this.country,
                     target : userPlan.value,
                     totalDay : this.totalDay,
                     totalMounth : this.totalMounth,
