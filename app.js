@@ -2,7 +2,7 @@
         el: '#app',
         data : {
             array: [
-                {name:'Vadim',desk:'RU',country : 'Ukraine',target : 20,totalDay:5,totalMounth:1,totalSum:250,team : 'team1'},
+                {desk:'RU',country : 'Ukraine',target : 20,totalDay:5,totalMounth:1,totalSum:250,team : 'team1'},
                 {name:'Eugene',desk:'RU',country : 'Ukraine',target : 20,totalDay:3,totalMounth:0,totalSum:1000,team : 'team2'},
                 {name:'Oleg',desk:'RU',country : 'Ukraine',target : 20,totalDay:1,totalMounth:0,totalSum:2250,team : 'team1'},
                 {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:1,totalMounth:0,totalSum:5000,team : 'team2'}
@@ -15,10 +15,11 @@
             totalDay : 1,
             totalMounth : 0,
             totalSum : 250,
-            team : 'team3'
+            team : 'team3',
+            time: 1
         },
         methods : {
-            totalSumF : function(name){
+            totalSumF(name){
                 let newTotal = this.array.filter(function(item){
                     return item.team === name;
                 });
@@ -27,10 +28,10 @@
                 },0)
                 return sum
             },
-            menuBar : function(){
+            menuBar(){
                 return this.menu = !this.menu
             },
-            addUser : function(){
+            addUser(){
 
                 // const userName = document.getElementById('name');
                 // const userCountry = document.getElementById('country')
@@ -49,23 +50,34 @@
                     team : userTeam.value
                 });
             },
-            totalDayF : function(){
+            totalDayF(){
                 let array = this.array.reduce(function(total,item){
                     return total+=item.totalDay
                 },0)
                 return array
             },
-            totalMounthF : function(){
+            totalMounthF(){
                 let totalArray = this.array.reduce(function(total,item){
                     return total+=item.totalMounth
                 },0)
                 return totalArray
             },
-            totalSumFun : function(){
+            totalSumFun(){
                 let totalSumArray = this.array.reduce(function(total,item){
                     return total+=item.totalSum
                 },0)
                 return totalSumArray;
+            },
+            funTime() {
+                var that = this;
+                setInterval(function(){
+                    console.log("timeinterval");
+                    that.time++;
+                    console.log(that.time);
+                },1000);
             }
+        },
+        beforeMount() {
+            this.funTime();
         }
     })
