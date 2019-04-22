@@ -10,7 +10,7 @@
     <div class="navbar-wrap">
       <navbar></navbar>
       <div class="form-wrap">
-        <add-user></add-user>
+        <add-use></add-user>
         <add-depo></add-depo>
       </div>
     </div>

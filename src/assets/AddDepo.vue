@@ -13,6 +13,7 @@
       <button class="btn btn-primary">Add Deposit</button>
     </div>
     <p class="sum">$ {{ sum }}</p>
+    <p>{{ msg }}</p>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ export default {
       msg : 'Add Deposit',
       sum : 0
     }
+  }
   }
 }
 </script>
@@ -82,6 +84,9 @@ export default {
   }
   .sum {
     font-size: 28px;
+  }
+  p {
+    color: #ffffff;
   }
 </style>
 
