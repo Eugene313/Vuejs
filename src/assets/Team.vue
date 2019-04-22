@@ -51,7 +51,7 @@ export default {
   }
   .user-team {
     position: relative;
-    box-shadow: -5px -5px 2px -6px rgba(0,0,0,0.75);
+    box-shadow: -5px -5px 2px -6px rgba(255, 255, 255, 0.75);
     width: 200px;
     height: 200px;
     margin: 0 10px;
@@ -84,8 +84,8 @@ export default {
   .fa-award {
     display: none;
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: 30px;
+    right: 30px;
     font-size: 28px;
   }
   .user-team:nth-child(1) i {

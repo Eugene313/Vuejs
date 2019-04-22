@@ -55,7 +55,7 @@ p {
 .team-wrap {
   height: 230px;
   margin: 10px;
-  border: 1px solid #00000020;
+  border: 1px solid #ffffff20;
   position: relative;
   overflow: scroll;
 }

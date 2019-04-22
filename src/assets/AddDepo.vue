@@ -31,7 +31,7 @@ export default {
   #add-depo {
     width: 49%;
     height: 350px;
-    border: 1px solid #00000030;
+    border: 1px solid #ffffff30;
     font-weight: 300;
     padding: 10px;
     display: flex;
@@ -62,12 +62,16 @@ export default {
     z-index: 1;
   }
   input {
+    background: #000000;
+    border: 1px solid grey;
     width: 100%;
     padding: 10px 10px;
     cursor: pointer;
+    color: #ffffff;
     z-index: 3;
   }
   button {
+    border: none;
     width: 240px;
     background: #3790fff2;
     padding: 13px 10px;
