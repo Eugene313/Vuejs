@@ -10,7 +10,7 @@
       <input type="number" v-model:value="sum" id="sum">
     </div>
     <div class="input-wrap">
-      <button>Add Deposit</button>
+      <button class="btn btn-primary">Add Deposit</button>
     </div>
     <p class="sum">$ {{ sum }}</p>
   </div>
@@ -30,7 +30,7 @@ export default {
 <style scoped>
   #add-depo {
     width: 49%;
-    height: 350px;
+    height: 400px;
     border: 1px solid #ffffff30;
     font-weight: 300;
     padding: 10px;
@@ -39,12 +39,13 @@ export default {
     align-items: center;
   }
   h2 {
+    font-size: 18px;
     margin: 10px;
     font-weight: 300;
   }
   i {
     padding-left: 10px;
-    color: #00000090;
+    color: #ffffff;
     font-size: 20px;
   }
   .input-wrap {
@@ -72,7 +73,8 @@ export default {
   }
   button {
     border: none;
-    width: 240px;
+    width: 100%;
+    /* width: 220px; */
     background: #3790fff2;
     padding: 13px 10px;
     color: #ffffff;

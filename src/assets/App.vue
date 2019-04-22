@@ -43,6 +43,7 @@ export default {
   padding: 10px;
 }
 p {
+  background: #3790fff2;
   width: 100%;
   text-align: center;
   text-transform: uppercase;

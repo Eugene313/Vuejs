@@ -22,7 +22,7 @@
       <input type="text" value="" id="team">
     </div>
     <div class="input-wrap">
-      <button>Add User</button>
+      <button class="btn btn-primary">Add User</button>
     </div>
   </div>
 </template>
@@ -41,7 +41,7 @@ export default {
   }
   #add-user {
     width: 49%;
-    height: 350px;
+    height: 400px;
     border: 1px solid #ffffff30;
     font-weight: 300;
     padding: 10px;
@@ -51,12 +51,13 @@ export default {
     justify-content: space-around;
   }
   h2 {
+    font-size: 18px;
     margin: 0;
     font-weight: 300;
   }
   i {
     padding-left: 10px;
-    color: #00000090;
+    color: #ffffff;
     font-size: 20px;
   }
   .input-wrap {

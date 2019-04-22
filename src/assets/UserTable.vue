@@ -8,9 +8,9 @@
           <td>Desk</td>
           <td>Country</td>
           <td>Target</td>
-          <td>Total Day</td>
-          <td>Total Mounth</td>
-          <td>Total Sum</td>
+          <td>Day</td>
+          <td>Mounth</td>
+          <td>Sum</td>
           <td>Team</td>
         </tr>
         <tr v-for="(item, key ) in array">
@@ -52,7 +52,7 @@ export default {
 </script>
 <style>
   #user-table{
-    height: 542px;
+    height: 500px;
     margin: 10px;
     border: 1px solid #ffffff20;
     overflow: scroll;
@@ -69,17 +69,9 @@ export default {
   .users tr i{
     display: none;
   }
-  .users tr:hover {
-    background: #98cbff;
-    cursor: pointer;
-    color: white;
-  }
   .users tr:first-child{
     background: #3790fff2;
     color: white;
-  }
-  .users tr:first-child:hover {
-    transform: scale(1)
   }
   .users tr:nth-child(2){
     background: #3790ff82;
@@ -119,6 +111,15 @@ export default {
     margin-bottom: 20px;
     border-bottom: 1px solid #d2d2d2;
 }
+  .users tr:hover {
+    background: #ff00006e;
+    cursor: pointer;
+    color: white;
+  }
+  .users tr:first-child:hover {
+    transform: scale(1);
+    background: #3790fff2;
+  }
 </style>
 
 

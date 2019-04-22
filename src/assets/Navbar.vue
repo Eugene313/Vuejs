@@ -14,13 +14,17 @@ export default {
   .navbar {
     width: 100%;
     background: #3790fff2;
+    border-bottom: 1px solid #ffffff90;
     color: #ffffff;
-    height: 60px;
+    height: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-weight: 300;
-    border: 1px solid #00000020;
+  }
+  p {
+    margin: 0;
+    padding: 0;
   }
 </style>
 
