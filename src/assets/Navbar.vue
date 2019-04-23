@@ -29,8 +29,7 @@ export default {
 <style>
   .navbar {
     width: 100%;
-    background: #3790fff2;
-    border-bottom: 1px solid #ffffff90;
+    border: 1px solid #ffffff40;
     color: #ffffff;
     height: 50px;
     display: flex;

@@ -22,7 +22,7 @@
       <input type="text" value="" id="team">
     </div>
     <div class="input-wrap">
-      <button class="btn btn-primary">Add User</button>
+      <button class="btn btn-primary"><i class="fas fa-plus"></i> Add User</button>
     </div>
   </div>
 </template>
@@ -76,6 +76,7 @@ export default {
   input  {
     background: #000000;
     border: 1px solid grey;
+    border-radius: 5px;
     width: 100%;
     padding: 10px 20px;
     cursor: pointer;
@@ -86,9 +87,12 @@ export default {
     border: none;
     width: 100%;
     background: #3790fff2;
-    padding: 13px 65px;
+    padding: 13px 55px;
     color: #ffffff;
     cursor: pointer;
+  }
+  i {
+    font-size: 15px;
   }
 </style>
 

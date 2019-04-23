@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <p> {{ msg }} </p>
+    <p> <i class="fas fa-users"></i> {{ msg }} </p>
     <div class="table-wrap">
       <user-table 
           :array="array"
@@ -20,7 +20,10 @@
       </navbar>
       <div class="form-wrap">
         <add-user></add-user>
-        <add-depo></add-depo>
+        <add-depo
+          :array="array"
+        >
+        </add-depo>
       </div>
     </div>
   </div>
@@ -43,13 +46,6 @@
           {name:'Eugene',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:3,totalSum:750,team : 'team2'},
           {name:'Oleg',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:2,totalSum:500,team : 'team3'},
           {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team4'},
-          {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-          {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-          {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-          {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-          {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-          {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team3'},
-          {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team3'},
         ]
       }
     }
@@ -76,12 +72,13 @@
   padding: 10px;
 }
 p {
-  background: #3790fff2;
+  border: 1px solid #ffffff30;
   width: 100%;
   text-align: center;
   text-transform: uppercase;
   font-size: 22px;
   margin: 0;
+  padding: 5px 0;
 }
 .table-wrap {
   width: 50%;

@@ -58,7 +58,7 @@ export default {
     display: none;
   }
   .users tr:first-child{
-    background: #3790fff2;
+    background: none;
     color: white;
   }
   .users tr:nth-child(2){
@@ -106,7 +106,7 @@ export default {
   }
   .users tr:first-child:hover {
     transform: scale(1);
-    background: #3790fff2;
+    background: none;
   }
 </style>
 

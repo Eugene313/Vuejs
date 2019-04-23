@@ -21,10 +21,10 @@ export default {
 	data(){
     return {
       teams : [
-        {name : 'team1',img : './dist/img/team1.png',target : 0},
-        {name : 'team2',img : './dist/img/team2.png',target : 0},
-        {name : 'team3',img:'./dist/img/team3.png',target : 0},
-        {name : 'team4',img:'./dist/img/team4.png',target : 0},
+        {name : 'team1',img : './dist/img/team1.png'},
+        {name : 'team2',img : './dist/img/team2.png'},
+        {name : 'team3',img:'./dist/img/team3.png'},
+        {name : 'team4',img:'./dist/img/team4.png'},
         ]
     }
   },
@@ -76,7 +76,7 @@ export default {
   }
    .user-team:hover {
      color: white;
-     background: #3790fff2;
+     background: #3791ff46;
      transform: scale(1.1);
      border-radius: 5px;
      cursor: pointer;
