@@ -6,6 +6,10 @@
           :array="array"
         >
         </user-table>
+      <navbar 
+        :array="array"
+      >
+      </navbar>
       <div class="team-wrap">
         <team 
           :array="array"
@@ -14,10 +18,6 @@
       </div>
     </div>
     <div class="navbar-wrap" >
-      <navbar 
-        :array="array"
-      >
-      </navbar>
       <div class="form-wrap">
         <add-user></add-user>
         <add-depo
@@ -63,7 +63,7 @@
   box-sizing: border-box;
 }
 #app {
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -81,7 +81,7 @@ p {
   padding: 5px 0;
 }
 .table-wrap {
-  width: 50%;
+  width: 100%;
 }
 .team-wrap {
   height: 230px;
@@ -91,12 +91,12 @@ p {
   overflow: scroll;
 }
 .navbar-wrap {
-  width: 50%;
+  width: 100%;
   padding: 10px;
 }
 .form-wrap {
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-start;
   margin-top: 18px;
 }
 </style>

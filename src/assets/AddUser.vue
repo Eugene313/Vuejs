@@ -40,11 +40,12 @@ export default {
     box-sizing: border-box;
   }
   #add-user {
-    width: 49%;
+    width: 30%;
     height: 400px;
     border: 1px solid #ffffff30;
     font-weight: 300;
     padding: 10px;
+    margin-right: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;

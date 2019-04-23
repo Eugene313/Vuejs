@@ -4,25 +4,35 @@
     <div class="input-wrap">
       <label for="username">Name</label>
       <select name="" id="username"
-        v-modal:value="value"
+        v-model:value="value"
+        v-bind:class="{
+          'valid' : value !== 'selectuser'
+        }"
       >
         <option value="selectuser">Select User</option>
         <option 
-            :value="item.name"
+            v-bind:value="item.name"
             v-for="item in array"
-          >{{ item.name }}</option>
+          >
+          {{ item.name }}
+        </option>
       </select>
     </div>
     <div class="input-wrap">
       <label for="sum">Sum</label>
-      <input type="number" 
+      <input type="number" maxlength="5"
         v-model:value="sum" id="sum"
+        v-bind:class="{
+          'valid' : sum >=250
+        }"
       >
     </div>
     <div class="input-wrap">
       <button class="btn btn-primary" 
-          @click="addDeposit"
-          :class="{'disabled' : 250 > sum || value === 'selectuser'}"
+          v-on:click="addDeposit"
+          v-bind:class="{
+            'disabled' : 250 > sum || value === 'selectuser'
+            }"
         >
         <i class="fas fa-plus"></i> Add Deposit</button>
     </div>
@@ -43,24 +53,26 @@
       return {
         msg : 'Add Deposit',
         sum : 0,
-        value : null
+        value : 'selectuser'
       }
     },
     methods : {
       addDeposit(){
         const userName = document.getElementById('username')
         const sum = document.getElementById('sum')
-        if(+sum.value >= 250){
-          this.array.forEach(function(item){
-            if(item.name === userName.value){
-              item.totalMounth++
-              item.totalDay++
-              item.totalSum += +sum.value
-              sum.value = 0
-              userName.value = 'selectuser'
-            }
-          }) 
-        } this.value = null; this.sum = 0
+        if(this.value !== 'selectuser'){
+          if(this.sum >= 250){
+            this.sum = 0
+            this.value = 'selectuser'; 
+            this.array.forEach(function(item){
+              if(item.name === userName.value){
+                item.totalMounth++
+                item.totalDay++
+                item.totalSum += +sum.value
+              }
+            })
+          }
+        }
       }
     }
   }
@@ -73,7 +85,7 @@
 
 <style scoped>
   #add-depo {
-    width: 49%;
+    width: 30%;
     height: 400px;
     border: 1px solid #ffffff30;
     font-weight: 300;
@@ -114,6 +126,7 @@
     padding: 10px 10px;
     cursor: pointer;
     color: #ffffff;
+    outline: none;
     z-index: 3;
   }
   select {
@@ -137,6 +150,13 @@
   }
   p {
     color: #ffffff;
+  }
+  .valid {
+    border: 2px solid #009c00e0;
+    position: relative;
+  }
+  .invalid {
+    border: 1px solid red;
   }
 </style>
 
