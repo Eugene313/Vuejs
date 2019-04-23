@@ -3,16 +3,28 @@
     <h2>{{ msg }}<i class="far fa-money-bill-alt"></i></h2>
     <div class="input-wrap">
       <label for="username">Name</label>
-      <select name="" id="username">
-        <option :value="item.name" v-for="item in array">{{ item.name }}</option>
+      <select name="" id="username"
+        v-modal:value="value"
+      >
+        <option value="selectuser">Select User</option>
+        <option 
+            :value="item.name"
+            v-for="item in array"
+          >{{ item.name }}</option>
       </select>
     </div>
     <div class="input-wrap">
       <label for="sum">Sum</label>
-      <input type="number" v-model:value="sum" id="sum">
+      <input type="number" 
+        v-model:value="sum" id="sum"
+      >
     </div>
     <div class="input-wrap">
-      <button class="btn btn-primary" @click="addDeposit"><i class="fas fa-plus"></i> Add Deposit</button>
+      <button class="btn btn-primary" 
+          @click="addDeposit"
+          :class="{'disabled' : 250 > sum || value === 'selectuser'}"
+        >
+        <i class="fas fa-plus"></i> Add Deposit</button>
     </div>
     <p class="sum">$ {{ sum }}</p>
     <p>{{ msg }}</p>
@@ -30,20 +42,25 @@
     data(){
       return {
         msg : 'Add Deposit',
-        sum : 0
+        sum : 0,
+        value : null
       }
     },
     methods : {
       addDeposit(){
         const userName = document.getElementById('username')
         const sum = document.getElementById('sum')
-        this.array.forEach(function(item){
+        if(+sum.value >= 250){
+          this.array.forEach(function(item){
             if(item.name === userName.value){
               item.totalMounth++
               item.totalDay++
               item.totalSum += +sum.value
+              sum.value = 0
+              userName.value = 'selectuser'
             }
-        })
+          }) 
+        } this.value = null; this.sum = 0
       }
     }
   }
