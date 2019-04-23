@@ -30,22 +30,10 @@
 </template>
 <script>
 export default {
-  name : 'UserTable',
+  props : ['array'],
   data(){
     return {
-      array : [
-        {name:'Maxim',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team1'},
-        {name:'Eugene',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-        {name:'Oleg',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team1'},
-        {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-        {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-        {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-        {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-        {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-        {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-        {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-        {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:0,totalSum:0,team : 'team2'},
-      ]
+      name : 'UserTable',
     }
   }
 }

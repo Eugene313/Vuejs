@@ -4,11 +4,11 @@
       <i class="fas fa-award"></i>
       <p>{{ item.name }}</p>
       <div class="img-wrap">
-        <img v-bind:src="item.img" alt="">
+        <img :src="item.img" alt="">
       </div>
-      <p>Total Day: 0</p>
-      <p>Total Mounth: 0</p>
-      <p>Total Sum: $0</p>
+      <p>Total Day: {{ totalTeamDay(item.name) }}</p>
+      <p>Total Mounth: {{ totalTeamMounth(item.name) }}</p>
+      <p>Total Sum: ${{ totalTeamSum(item.name) }}</p>
     </div>
   </div>
 </template>
@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  props : ['array'],
 	data(){
     return {
       teams : [
@@ -24,15 +25,27 @@ export default {
         {name : 'team2',img : './dist/img/team2.png',target : 0},
         {name : 'team3',img:'./dist/img/team3.png',target : 0},
         {name : 'team4',img:'./dist/img/team4.png',target : 0},
-        ],
-      img : './img/avatar.png',
-      name : 'team',
-      target : 0
+        ]
     }
   },
   methods : {
-    addTeam(){
-      this.team.push('team')
+    totalTeamSum(itemName){
+      let teamArray = this.array.filter(function(item){
+        return item.team === itemName
+      })
+      return teamArray.reduce((total, item) => total += item.totalSum, 0);
+    },
+    totalTeamDay(itemName){
+      let teamArray = this.array.filter(function(item){
+        return item.team === itemName
+      })
+      return teamArray.reduce((total, item) => total += item.totalDay, 0);
+    },
+    totalTeamMounth(itemName){
+      let teamArray = this.array.filter(function(item){
+        return item.team === itemName
+      })
+      return teamArray.reduce((total, item) => total += item.totalMounth, 0);
     }
   }
 }
