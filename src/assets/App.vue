@@ -24,6 +24,7 @@
           :array="array"
         >
         </add-depo>
+        <team-target></team-target>
       </div>
     </div>
   </div>

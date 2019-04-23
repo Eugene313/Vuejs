@@ -14,7 +14,7 @@
           <td>Team</td>
         </tr>
         <tr v-for="(item, key ) in array">
-          <td><i class="fas fa-trophy"></i>{{ (key + 1) + '.' }}</td>
+          <td><span>{{ (key + 1) + '.' }}<i class="fas fa-trophy"></i></span></td>
           <td>{{ item.name }}</td>
           <td>{{ item.desk }}</td>
           <td>{{ item.country }}</td>
@@ -107,6 +107,14 @@ export default {
   .users tr:first-child:hover {
     transform: scale(1);
     background: none;
+  }
+  span {
+    position: relative;
+  }
+  span i {
+    position: absolute;
+    top: 2px;
+    left: 0;
   }
 </style>
 

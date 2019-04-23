@@ -26,9 +26,9 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
   .navbar {
-    width: 100%;
+    width: 1400px;
     border: 1px solid #ffffff40;
     color: #ffffff;
     height: 50px;
@@ -36,10 +36,28 @@ export default {
     justify-content: space-around;
     align-items: center;
     font-weight: 300;
+    padding: 0;
   }
   p {
+    width: 33.3%;
+    height: 100%;
     margin: 0;
-    padding: 0;
+    padding-top: 10px;
+    text-align: center;
+    transition: 0.5s;
+  }
+  p:first-child {
+    background: #3790ff82;
+  }
+  p:nth-child(2){
+    background: #3790ff42;
+  }
+  p:nth-child(3){
+    background: #3790ff21;
+  }
+  p:hover {
+    background: rgb(49, 114, 255);
+    transform: scale(1.03);
   }
 </style>
 

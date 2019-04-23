@@ -45,7 +45,7 @@ export default {
     border: 1px solid #ffffff30;
     font-weight: 300;
     padding: 10px;
-    margin-right: 3%;
+    margin-right: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
