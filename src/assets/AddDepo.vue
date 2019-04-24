@@ -14,6 +14,7 @@
         <option 
             v-bind:value="item.name"
             v-for="item in array"
+            :key="item.id"
           >
           {{ item.name }}
         </option>

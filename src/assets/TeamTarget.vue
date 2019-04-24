@@ -1,8 +1,7 @@
 <template>
   <div class="team-target">
-    <p>Team name :</p>
-    <p>Team target:</p>
-    <p>Progress:</p>
+    <p>Team target: 100</p>
+    <p>Progress: 20%</p>
     <div class="progress">
       <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
@@ -18,11 +17,13 @@
 
 <style>
   .team-target {
-    width: 33.3%;
-    height: 400px;
+    width: 300px;
+    height: 100%;;
     padding: 20px;
-    border: 1px solid #fffff330;
+    transition: 1s;
   }
 </style>
+
+
 
 

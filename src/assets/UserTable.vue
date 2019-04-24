@@ -13,7 +13,7 @@
           <td>Sum</td>
           <td>Team</td>
         </tr>
-        <tr v-for="(item, key ) in array">
+        <tr v-for="(item, key ) in array" :key="item.id">
           <td><span>{{ (key + 1) + '.' }}<i class="fas fa-trophy"></i></span></td>
           <td>{{ item.name }}</td>
           <td>{{ item.desk }}</td>

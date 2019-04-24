@@ -1,14 +1,17 @@
 <template>
   <div class="team">
-    <div class="user-team"  v-for="item in teams">
-      <i class="fas fa-award"></i>
-      <p>{{ item.name }}</p>
-      <div class="img-wrap">
-        <img :src="item.img" alt="">
+    <div class="user-team" v-for="item in teams" :key="item.id" @click="open(item.id)">
+      <div class="user-team-wrap">
+        <i class="fas fa-award"></i>
+        <p>{{ item.name }}</p>
+        <div class="img-wrap">
+          <img :src="item.img" alt="">
+        </div>
+        <p>Total Day: {{ totalTeamDay(item.name) }}</p>
+        <p>Total Mounth: {{ totalTeamMounth(item.name) }}</p>
+        <p>Total Sum: ${{ totalTeamSum(item.name) }}</p>
       </div>
-      <p>Total Day: {{ totalTeamDay(item.name) }}</p>
-      <p>Total Mounth: {{ totalTeamMounth(item.name) }}</p>
-      <p>Total Sum: ${{ totalTeamSum(item.name) }}</p>
+        <team-target v-if="item.v"></team-target>
     </div>
   </div>
 </template>
@@ -21,10 +24,10 @@ export default {
 	data(){
     return {
       teams : [
-        {name : 'team1',img : './dist/img/team1.png'},
-        {name : 'team2',img : './dist/img/team2.png'},
-        {name : 'team3',img:'./dist/img/team3.png'},
-        {name : 'team4',img:'./dist/img/team4.png'},
+        {id: 1, name : 'team1',img : './dist/img/team1.png', v: false},
+        {id: 2, name : 'team2',img : './dist/img/team2.png', v: false},
+        {id: 3, name : 'team3',img:'./dist/img/team3.png', v: false},
+        {id: 4, name : 'team4',img:'./dist/img/team4.png', v: false},
         ]
     }
   },
@@ -46,6 +49,15 @@ export default {
         return item.team === itemName
       })
       return teamArray.reduce((total, item) => total += item.totalMounth, 0);
+    },
+    open(id){
+      this.teams.forEach(element => {
+        if (element.id !== id) {
+          element.v = false;
+        } else {
+          element.v = !element.v;
+        }
+      });
     }
   }
 }
@@ -65,21 +77,32 @@ export default {
   .user-team {
     position: relative;
     box-shadow: -5px -5px 2px -6px rgba(255, 255, 255, 0.75);
+    width: 100%;
+    height: 200px;
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: 0.3s;
+  }
+   .user-team:hover {
+     box-shadow: none;
+     color: white;
+     background: #3791ff46;
+     transform: scale(1.05);
+     border-radius: 5px;
+     cursor: pointer;
+   }
+   .user-team-wrap {
     width: 200px;
     height: 200px;
+    position: relative;
     margin: 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     transition: 0.3s;
-  }
-   .user-team:hover {
-     color: white;
-     background: #3791ff46;
-     transform: scale(1.1);
-     border-radius: 5px;
-     cursor: pointer;
    }
   .img-wrap {
     width: 100px;

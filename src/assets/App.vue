@@ -24,7 +24,6 @@
           :array="array"
         >
         </add-depo>
-        <team-target></team-target>
       </div>
     </div>
   </div>
@@ -105,7 +104,7 @@ p {
 }
 .form-wrap {
   display: flex;
-  justify-content:center;
+  justify-content:flex-start;
   margin-top: 18px;
 }
 </style>
