@@ -1,13 +1,14 @@
 <template>
   <div id="add-depo">
     <h2>{{ msg }}<i class="far fa-money-bill-alt"></i></h2>
-    <div class="input-wrap">
-      <label for="username">Name</label>
-      <select name="" id="username"
-        v-model:value="value"
+    <div class="input-wrap"
         v-bind:class="{
           'valid' : value !== 'selectuser'
         }"
+    >
+      <label for="username">Name</label>
+      <select name="" id="username"
+        v-model:value="value"
       >
         <option value="selectuser">Select User</option>
         <option 
@@ -18,13 +19,13 @@
         </option>
       </select>
     </div>
-    <div class="input-wrap">
+    <div class="input-wrap"
+        v-bind:class="{
+          'valid' : sum >=250
+        }">
       <label for="sum">Sum</label>
       <input type="number" maxlength="5"
         v-model:value="sum" id="sum"
-        v-bind:class="{
-          'valid' : sum >=250
-        }"
       >
     </div>
     <div class="input-wrap">
@@ -94,6 +95,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 1s;
   }
   h2 {
     font-size: 18px;
@@ -106,9 +108,12 @@
     font-size: 20px;
   }
   .input-wrap {
+    border: 1px solid #ffffff50;
+    border-radius: 5px;
     width: 70%;
     position: relative;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    transition: 0.5s;
   }
   label {
     width: 100%;
@@ -121,13 +126,14 @@
   }
   input,select {
     background: #000000;
-    border: 1px solid grey;
+    border: none;
     border-radius: 5px;
     width: 100%;
     padding: 10px 10px;
     cursor: pointer;
     color: #ffffff;
     outline: none;
+    transition: 1s;
     z-index: 3;
   }
   select {
@@ -153,11 +159,21 @@
     color: #ffffff;
   }
   .valid {
-    border: 2px solid #009c00e0;
+    border: 1px solid #009c00e0;
     position: relative;
+    border-radius: 5px;
   }
-  .invalid {
-    border: 1px solid red;
+  .valid::after{
+    content: " ";
+    background: url(../img/check-solid.svg) no-repeat;
+    background-size: cover;
+    position: absolute;
+    fill: aqua;
+    top: 12px;
+    right: -30px;
+    width: 16px;
+    height: 16px;
+    color: rgb(0, 194, 65);
   }
 </style>
 

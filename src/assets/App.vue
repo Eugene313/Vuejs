@@ -47,6 +47,14 @@
           {name:'Eugene',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:3,totalSum:750,team : 'team2'},
           {name:'Oleg',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:2,totalSum:500,team : 'team3'},
           {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team4'},
+          {name:'Markus',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team1'},
+          {name:'Iren',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team2'},
+          {name:'Katya',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team3'},
+          {name:'Anna',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team4'},
+          {name:'Sergey',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team1'},
+          {name:'Bender',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team2'},
+          {name:'Vladimer',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team3'},
+          {name:'Kostya',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team4'},
         ]
       }
     }
@@ -97,7 +105,7 @@ p {
 }
 .form-wrap {
   display: flex;
-  justify-content:flex-start;
+  justify-content:center;
   margin-top: 18px;
 }
 </style>

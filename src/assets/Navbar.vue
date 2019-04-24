@@ -57,7 +57,9 @@ export default {
   }
   p:hover {
     background: rgb(49, 114, 255);
+    border-radius: 5px;
     transform: scale(1.03);
+    cursor: pointer;
   }
 </style>
 
