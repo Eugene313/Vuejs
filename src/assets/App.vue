@@ -92,8 +92,8 @@ p {
   width: 100%;
 }
 .team-wrap {
-  height: 230px;
-  margin: 10px;
+  height: 240px;
+  margin: 10px 0;
   border: 1px solid #ffffff20;
   position: relative;
   overflow: scroll;

@@ -28,7 +28,7 @@ export default {
 </script>
 <style scoped>
   .navbar {
-    width: 1400px;
+    max-width: 1400px;
     border: 1px solid #ffffff40;
     color: #ffffff;
     height: 50px;

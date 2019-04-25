@@ -11,7 +11,9 @@
         <p>Total Mounth: {{ totalTeamMounth(item.name) }}</p>
         <p>Total Sum: ${{ totalTeamSum(item.name) }}</p>
       </div>
-        <team-target v-if="item.v"></team-target>
+      <transition name="fade">
+        <team-target v-show="item.v"></team-target>
+      </transition>
     </div>
   </div>
 </template>
@@ -53,7 +55,7 @@ export default {
     open(id){
       this.teams.forEach(element => {
         if (element.id !== id) {
-          element.v = false;
+          // element.v = false;
         } else {
           element.v = !element.v;
         }
@@ -135,6 +137,15 @@ export default {
   .user-team:nth-child(3) i {
     display: inline;
     color: #e46d0082;
+  }
+  .fade-enter-active {
+  transition: opacity .5s;
+  }
+  .fade-leave-active {
+    transition: opacity .1s;
+  }
+  .fade-enter, .fade-leave-to{
+    opacity: 0;
   }
 </style>
 
