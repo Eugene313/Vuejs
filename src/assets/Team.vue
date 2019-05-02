@@ -26,8 +26,6 @@
   </div>
 </template>
 
-
-
 <script>
 export default {
   props : ['array'],
@@ -72,8 +70,6 @@ export default {
   }
 }
 </script>
-
-
 
 <style scoped >
   .team {

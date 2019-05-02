@@ -135,7 +135,6 @@
   button {
     border: none;
     width: 100%;
-    /* width: 220px; */
     background: #3790fff2;
     padding: 13px 10px;
     color: #ffffff;
