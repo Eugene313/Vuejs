@@ -1,52 +1,43 @@
 <template>
   <div id="add-depo">
     <h2>{{ msg }}<i class="far fa-money-bill-alt"></i></h2>
-    <div class="input-wrap"
-        v-bind:class="{
-          'valid' : value !== 'selectuser'
-        }"
-    >
+    <div  class="input-wrap"
+          v-bind:class="{
+            'valid' : value !== 'selectuser'
+            }">
       <label for="username">Name</label>
-      <select name="" id="username"
-        v-model:value="value"
-      >
+      <select   name="" 
+                id="username"
+                v-model:value="value">
         <option value="selectuser">Select User</option>
-        <option 
-            v-bind:value="item.name"
-            v-for="item in array"
-            :key="item.id"
-          >
-          {{ item.name }}
+        <option v-bind:value="item.name"
+                v-for="item in array"
+                v-bind:key="item.id">
+                {{ item.name }}
         </option>
       </select>
     </div>
-    <div class="input-wrap"
-        v-bind:class="{
-          'valid' : sum >=250
-        }">
+    <div  class="input-wrap"
+          v-bind:class="{
+            'valid' : sum >=250
+            }">
       <label for="sum">Sum</label>
-      <input type="number" maxlength="5"
-        v-model:value="sum" id="sum"
-      >
+      <input  type="number" 
+              maxlength="5"
+              v-model:value="sum" id="sum">
     </div>
     <div class="input-wrap">
       <button class="btn btn-primary" 
-          v-on:click="addDeposit"
-          v-bind:class="{
-            'disabled' : 250 > sum || value === 'selectuser'
-            }"
-        >
+              v-on:click="addDeposit"
+              v-bind:class="{
+                  'disabled' : 250 > sum || value === 'selectuser'
+              }">
         <i class="fas fa-plus"></i> Add Deposit</button>
     </div>
     <p class="sum">$ {{ sum }}</p>
     <p>{{ msg }}</p>
   </div>
 </template>
-
-
-
-
-
 
 <script>
   export default {

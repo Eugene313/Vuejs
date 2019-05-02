@@ -1,6 +1,7 @@
 <template>
   <div id="user-table">
-      <table cellspacing="0" class="headline">
+      <table  cellspacing="0" 
+              class="headline">
         <tbody>
           <tr>
             <td>#</td>
@@ -18,8 +19,14 @@
       <div class="wrap">
         <table class="users" cellspacing="0">
           <tbody style="position:relative;padding-top:50px;">
-              <tr v-for="(item, key ) in array" :key="key">
-                <td><span>{{ (key + 1) + '.' }}<i class="fas fa-trophy"></i></span></td>
+              <tr v-for="(item, key ) in array" 
+                  v-bind:key="key">
+                <td>
+                  <span>
+                    {{ (key + 1) + '.' }}
+                    <i class="fas fa-trophy"></i>
+                  </span>
+                </td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.desk }}</td>
                 <td>{{ item.country }}</td>

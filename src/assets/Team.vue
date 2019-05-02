@@ -1,18 +1,26 @@
 <template>
   <div class="team">
-    <div class="user-team" v-for="item in teams" :key="item.id" @click="open(item.id)">
+    <div  class="user-team" 
+          v-for="item in teams" 
+          v-bind:key="item.id" 
+          v-on:click="open(item.id)">
+
       <div class="user-team-wrap">
         <i class="fas fa-award"></i>
+
         <p>{{ item.name }}</p>
+
         <div class="img-wrap">
-          <img :src="item.img" alt="">
+          <img  v-bind:src="item.img" 
+                alt="">
         </div>
         <p>Total Day: {{ totalTeamDay(item.name) }}</p>
         <p>Total Mounth: {{ totalTeamMounth(item.name) }}</p>
         <p>Total Sum: ${{ totalTeamSum(item.name) }}</p>
       </div>
       <transition name="fade">
-        <team-target v-show="item.v"></team-target>
+        <team-target v-show="item.v">
+        </team-target>
       </transition>
     </div>
   </div>
