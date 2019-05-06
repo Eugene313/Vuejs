@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <p>Total Day: {{ totalDayFun() }}</p>
-    <p>Total Mounth: {{ totalMounthFun() }}</p>
+    <p>Total Month: {{ totalMounthFun() }}</p>
     <p>Total Sum: $ {{ totalSumFun()}}</p>
   </div>
 </template>

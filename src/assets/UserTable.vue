@@ -10,7 +10,7 @@
             <td>Country</td>
             <td>Target</td>
             <td>Day</td>
-            <td>Mounth</td>
+            <td>Month</td>
             <td>Sum</td>
             <td>Team</td>
           </tr>
@@ -18,12 +18,14 @@
       </table>
       <div class="wrap">
         <table class="users" cellspacing="0">
-          <tbody style="position:relative;padding-top:50px;">
-              <tr v-for="(item, key ) in array" 
-                  v-bind:key="key">
+          <!-- <tbody style="position:relative;padding-top:50px;"> -->
+            <transition-group name="flip-list" tag="tbody">
+              <tr v-for="(item,index) in array" 
+                  v-bind:key="item"
+                  v-bind:array="arraySort">
                 <td>
                   <span>
-                    {{ (key + 1) + '.' }}
+                    {{ (index + 1) + '.' }}
                     <i class="fas fa-trophy"></i>
                   </span>
                 </td>
@@ -36,7 +38,8 @@
                 <td>{{ ' $' + item.totalSum }}</td>
                 <td>{{ item.team }}</td>
               </tr>
-          </tbody>
+              </transition-group>
+          <!-- </tbody> -->
         </table>
       </div>
   </div>
@@ -48,10 +51,18 @@ export default {
     return {
       name : 'UserTable',
     }
-  }
+  },
+  computed : {
+      arraySort(){
+        return this.array = this.array.sort((a,b) => b.totalDay - a.totalDay)
+      }
+  },
 }
 </script>
 <style scoped>
+  .flip-list-move {
+    transition: transform 0.5s;
+  }
   #user-table {
     max-width: 1400px;
     border: 1px solid #ffffff50;
@@ -96,16 +107,19 @@ export default {
   }
   .users tr:first-child td i {
     display: inline;
+    top: 32%;
     right: 0;
     color: gold;
   }
   .users tr:nth-child(2) td i {
     display: inline;
+    top: 32%;
     right: 0;
     color: silver;
   }
   .users tr:nth-child(3) td i {
     display: inline;
+    top: 32%;
     right: 0;
     color: rgb(180, 102, 0);
   }
@@ -113,11 +127,6 @@ export default {
     background: #840000;
     cursor:pointer;
   }
-.list-complete-item {
-  transition: all 1s;
-  display: inline-block;
-  margin-right: 10px;
-}
 </style>
 
 
