@@ -85,6 +85,7 @@ export default {
     font-weight: 300;
   }
   tr {
+    background: #0040881a;
     border-bottom: 1px solid #ffffff50;
   }
   td {
