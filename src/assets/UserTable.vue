@@ -21,7 +21,7 @@
           <!-- <tbody style="position:relative;padding-top:50px;"> -->
             <transition-group name="flip-list" tag="tbody">
               <tr v-for="(item,index) in array" 
-                  v-bind:key="item"
+                  v-bind:key="item.name"
                   v-bind:array="arraySort">
                 <td>
                   <span>
