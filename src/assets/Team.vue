@@ -19,7 +19,9 @@
         <p>Total Sum: ${{ totalTeamSum(item.name) }}</p>
       </div>
       <transition name="fade">
-        <team-target v-show="item.v">
+        <team-target v-show="item.v"
+                     v-bind:item="item"
+                     v-bind:array="array">
         </team-target>
       </transition>
     </div>

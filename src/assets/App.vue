@@ -29,12 +29,6 @@
   </div>
 </template>
 
-
-
-
-
-
-
 <script>
   export default {
     name: 'app',
@@ -42,10 +36,10 @@
       return {
         msg: 'Users Dashboard',
         array : [
-          {name:'Maxim',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:4,totalSum:1000,team : 'team1'},
+          {name:'Maxim',desk:'RU',country : 'Ukraine',target : 30,totalDay:0,totalMounth:4,totalSum:1000,team : 'team1'},
           {name:'Eugene',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:3,totalSum:750,team : 'team2'},
-          {name:'Oleg',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:2,totalSum:500,team : 'team3'},
-          {name:'Felix',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team4'},
+          {name:'Oleg',desk:'RU',country : 'Ukraine',target : 10,totalDay:0,totalMounth:2,totalSum:500,team : 'team3'},
+          {name:'Felix',desk:'RU',country : 'Ukraine',target : 5,totalDay:0,totalMounth:1,totalSum:250,team : 'team4'},
           {name:'Markus',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team1'},
           {name:'Iren',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team2'},
           {name:'Katya',desk:'RU',country : 'Ukraine',target : 20,totalDay:0,totalMounth:1,totalSum:250,team : 'team3'},
@@ -59,10 +53,6 @@
     }
   }
 </script>
-
-
-
-
 
 
 <style lang="scss" scoped>

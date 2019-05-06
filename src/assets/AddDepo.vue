@@ -72,10 +72,6 @@
 </script>
 
 
-
-
-
-
 <style scoped>
   #add-depo {
     width: 30%;
