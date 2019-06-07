@@ -1,5 +1,19 @@
 <template>
   <div class="team">
+    <div class="user-team" >
+      <div class="user-team-wrap" >
+        <i class="fas fa-plus-circle" @click="openTeam"></i>
+      </div>
+      <transition name="fade">
+        <div class="add-team" v-show="addTeam">
+          <label for="">Team Name</label>
+          <input type="text">
+          <label for="">Photo</label>
+          <input type="file" class="photo">
+          <button>Create</button>
+        </div>
+      </transition>
+    </div>
     <div  class="user-team" 
           v-for="item in teams" 
           v-bind:key="item.id" 
@@ -30,15 +44,10 @@
 
 <script>
 export default {
-  props : ['array'],
+  props : ['array','teams'],
 	data(){
     return {
-      teams : [
-        {id: 1, name : 'team1',img : './dist/img/team1.png', v: false},
-        {id: 2, name : 'team2',img : './dist/img/team2.png', v: false},
-        {id: 3, name : 'team3',img:'./dist/img/team3.png', v: false},
-        {id: 4, name : 'team4',img:'./dist/img/team4.png', v: false},
-        ]
+      addTeam : false
     }
   },
   methods : {
@@ -68,12 +77,20 @@ export default {
           element.v = !element.v;
         }
       });
+    },
+    openTeam () {
+      this.addTeam = !this.addTeam
     }
   }
 }
 </script>
 
 <style scoped >
+  .add-team {
+    padding: 10px 0;
+    width: 200px;
+    height: 100%;
+  }
   .team {
     height: 230px;
     display: flex;
@@ -132,15 +149,15 @@ export default {
     right: 30px;
     font-size: 28px;
   }
-  .user-team:nth-child(1) i {
+  .user-team:nth-child(2) i {
     display: inline;
     color: gold;
   }
-  .user-team:nth-child(2) i {
+  .user-team:nth-child(3) i {
     display: inline;
     color: silver;
   }
-  .user-team:nth-child(3) i {
+  .user-team:nth-child(4) i {
     display: inline;
     color: #e46d0082;
   }
@@ -152,6 +169,36 @@ export default {
   }
   .fade-enter, .fade-leave-to{
     opacity: 0;
+  }
+  .fa-plus-circle {
+    font-size: 100px;
+    color: #cccccc26;
+  }
+  input  {
+    background: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 90%;
+    padding: 0 20px;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 3;
+  }
+  .photo {
+    border: none;
+    padding: 0;
+    margin: 0 0 5px 0;
+    background: none;
+    font-size: 10px;
+  }
+  button {
+    border: none;
+    border-radius: 5px;
+    background: none;
+    background: #3790fff2;
+    padding: 5px 15px;
+    margin: 10px 0;
+    color: white;
   }
 </style>
 

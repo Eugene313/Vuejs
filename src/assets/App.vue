@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <p> <i class="fas fa-users"></i> {{ msg }} </p>
+    <p @click="post"> <i class="fas fa-users"></i> {{ msg }}</p>
     <div class="table-wrap">
       <user-table 
           :array="array"
@@ -13,13 +13,15 @@
       <div class="team-wrap">
         <team 
           :array="array"
+          :teams="teams"
         >
         </team>
       </div>
     </div>
     <div class="navbar-wrap" >
       <div class="form-wrap">
-        <add-user></add-user>
+        <add-user :array="array" :teams="teams"></add-user>
+        <add-new-user :array="array" :teams="teams"></add-new-user>
         <add-depo
           :array="array"
         >
@@ -30,26 +32,58 @@
 </template>
 
 <script>
+import axios from 'axios'
   export default {
     name: 'app',
     data () {
       return {
         msg: 'Users Dashboard',
-        array : [
-          {name:'Maxim',desk:'RU',country : 'Ukraine',target : 4,totalDay:0,totalMounth:4,totalSum:1000,team : 'team1'},
-          {name:'Eugene',desk:'RU',country : 'Ukraine',target : 3,totalDay:0,totalMounth:3,totalSum:750,team : 'team2'},
-          {name:'Oleg',desk:'RU',country : 'Ukraine',target : 2,totalDay:0,totalMounth:2,totalSum:500,team : 'team3'},
-          {name:'Felix',desk:'RU',country : 'Ukraine',target : 5,totalDay:0,totalMounth:1,totalSum:250,team : 'team4'},
-          {name:'Markus',desk:'RU',country : 'Ukraine',target : 4,totalDay:0,totalMounth:1,totalSum:250,team : 'team1'},
-          {name:'Iren',desk:'RU',country : 'Ukraine',target : 3,totalDay:0,totalMounth:1,totalSum:250,team : 'team2'},
-          {name:'Katya',desk:'RU',country : 'Ukraine',target : 2,totalDay:0,totalMounth:1,totalSum:250,team : 'team3'},
-          {name:'Anna',desk:'RU',country : 'Ukraine',target : 1,totalDay:0,totalMounth:1,totalSum:250,team : 'team4'},
-          {name:'Sergey',desk:'RU',country : 'Ukraine',target : 4,totalDay:0,totalMounth:1,totalSum:250,team : 'team1'},
-          {name:'Bender',desk:'RU',country : 'Ukraine',target : 3,totalDay:0,totalMounth:1,totalSum:250,team : 'team2'},
-          {name:'Vladimer',desk:'RU',country : 'Ukraine',target : 2,totalDay:0,totalMounth:1,totalSum:250,team : 'team3'},
-          {name:'Kostya',desk:'RU',country : 'Ukraine',target : 1,totalDay:0,totalMounth:1,totalSum:250,team : 'team4'},
-        ],
+        array : [],
+        teams : [],
+        ipData : ''
       }
+    },
+    methods : {
+      post(){
+        axios.get('https://freegeoip.app/json/').then((response) => {
+          this.ipData = response.data
+          console.log(response.data)
+        })
+      }
+    },
+    created(){
+      fetch("http://da-api.qps.pp.ua/api/v1/auth",
+        {
+          headers: {
+            'accept': 'application/json',
+            'content-Type': 'application/json'
+          },
+          method: "POST",
+          body: JSON.stringify({'email': 'admin@user1.com', 'password': '1wsx2qaz'})
+        })
+      .then((data) => data.json()).then(data => localStorage.setItem('token', data.data.token))
+    },
+    beforeMount(){
+      axios.get("http://da-api.qps.pp.ua/api/v1/users",
+        {
+          headers: {
+            'content-Type': 'application/json',
+            'Authorization': 'Bearer ' +  localStorage.getItem('token')
+          }
+        })
+      .then(response => {
+        this.array = response.data
+        })
+      axios.get("http://da-api.qps.pp.ua/api/v1/teams",
+        {
+          headers: {
+            'content-Type': 'application/json',
+            'Authorization': 'Bearer ' +  localStorage.getItem('token')
+          }
+        })
+      .then(response => {
+        this.teams = response.data
+        })
     }
   }
 </script>

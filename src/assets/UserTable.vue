@@ -18,10 +18,9 @@
       </table>
       <div class="wrap">
         <table class="users" cellspacing="0">
-          <!-- <tbody style="position:relative;padding-top:50px;"> -->
             <transition-group name="flip-list" tag="tbody">
               <tr v-for="(item,index) in array" 
-                  v-bind:key="item.name"
+                  v-bind:key="item.id"
                   v-bind:array="arraySort">
                 <td>
                   <span>
@@ -39,7 +38,6 @@
                 <td>{{ item.team }}</td>
               </tr>
               </transition-group>
-          <!-- </tbody> -->
         </table>
       </div>
   </div>
@@ -64,6 +62,7 @@ export default {
     transition: transform 0.5s;
   }
   #user-table {
+    background: #00000090;
     max-width: 1400px;
     border: 1px solid #ffffff50;
     margin: 10px 0;

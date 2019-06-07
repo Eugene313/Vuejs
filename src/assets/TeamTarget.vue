@@ -2,7 +2,7 @@
   <div class="team-target">
     <p>Total Users: {{ totalTeamUsers() }}</p>
     <p>Team target: {{ teamTarget() }}</p>
-    <p>Progress: {{ teamProgress() + '%'}}</p>
+    <p>Progress: {{ teamProgress() + '%' || 0 + '%'}}</p>
     <div class="progress">
       <div  class="progress-bar" 
             role="progressbar" 

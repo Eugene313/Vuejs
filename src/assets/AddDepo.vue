@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import axios from 'axios'
   export default {
     props : ['array'],
     data(){
@@ -62,8 +63,21 @@
                 item.totalMounth++
                 item.totalDay++
                 item.totalSum += +sum.value
+                delete item._id
+                console.log(item)
+                fetch('http://da-api.qps.pp.ua/api/v1/users/'+item.id,
+                  {
+                    headers: {
+                      'accept': 'application/json',
+                      'content-Type': 'application/json',
+                      'Authorization': 'Bearer ' +  localStorage.getItem('token')
+                    },
+                    method: "POST",
+                    body: JSON.stringify(item)
+                  })
               }
             })
+            
           }
         }
       }

@@ -4,6 +4,7 @@ import App from './assets/App.vue'
 import AddDepo from './assets/AddDepo.vue'
 import AddUser from './assets/AddUser.vue'
 import EditUser from './assets/EditUser.vue'
+import AddNewUser from './assets/AddNewUser.vue'
 import Navbar from './assets/Navbar.vue'
 import Team from './assets/Team.vue'
 import UserTable from './assets/UserTable.vue'
@@ -17,10 +18,12 @@ Vue.component('Navbar', Navbar);
 Vue.component('Team', Team);
 Vue.component('UserTable', UserTable);
 Vue.component('TeamTarget', TeamTarget);
+Vue.component('AddNewUser', AddNewUser);
+
 
 
 
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
 })
